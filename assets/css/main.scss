@@ -211,42 +211,6 @@ html {
     z-index: 2;
   }
   
-  // 社交链接按钮样式修复
-  .author__urls-wrapper .btn {
-    display: inline-block !important;
-    margin-bottom: 0.5rem;
-    padding: 0.4rem 0.6rem;
-    font-size: 0.8rem;
-  }
-  
-  .author__urls-wrapper {
-    margin-top: 0.4rem;
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-  
-  .author__urls.is--visible {
-    gap: 0.4rem;
-    margin-top: 0.4rem; // 减少顶部间距
-    justify-content: center;
-    display: flex !important;
-    flex-wrap: wrap;
-  }
-  
-  .author__urls.is--visible a {
-    padding: 0.4rem 0.6rem;
-    font-size: 0.8rem;
-    border-radius: 5px;
-    display: flex;
-    align-items: center;
-  }
-  
-  .author__urls.is--visible i {
-    margin-right: 0.3rem;
-  }
-  
   // 修复内容重叠问题
   .profile-main-card {
     padding: 1.25rem 1rem 1rem 1rem;
@@ -342,18 +306,6 @@ html {
     margin-bottom: 0.4rem;
   }
   
-  // 社交链接按钮样式修复
-  .author__urls-wrapper .btn {
-    display: inline-block !important;
-    margin-bottom: 0.4rem;
-    padding: 0.3rem 0.5rem;
-    font-size: 0.75rem;
-  }
-  
-  .author__urls-wrapper {
-    margin-top: 0.3rem;
-  }
-  
   .profile-main-card {
     padding: 1rem 0.75rem 0.75rem 0.75rem;
     margin-bottom: 1rem;
@@ -379,22 +331,6 @@ html {
     margin-bottom: 1.25rem;
     padding-bottom: 0.75rem;
   }
-  
-  .author__urls.is--visible {
-    gap: 0.3rem;
-    margin-top: 0.3rem;
-    display: flex !important;
-  }
-  
-  .author__urls.is--visible a {
-    padding: 0.3rem 0.5rem;
-    font-size: 0.75rem;
-    border-radius: 4px;
-  }
-  
-  .author__urls.is--visible i {
-    margin-right: 0.25rem;
-  }
 }
 
 // 优化卡片内标题与正文间距
@@ -405,14 +341,19 @@ html {
   margin-bottom: 1.2rem;
 }
 
-// 统一侧边栏卡片样式
-.sidebar {
+// 统一卡片样式与宽度
+.sidebar, .archive, .author__profile {
   background: #fff;
   border-radius: 18px;
   box-shadow: 0 4px 24px rgba(0,0,0,0.08), 0 1.5px 4px rgba(0,0,0,0.04);
+  border: 1px solid #e6e6e6;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.sidebar {
   padding: 2rem 1.5rem 1.5rem 1.5rem;
   margin: 1.5rem 0 1.5rem 0;
-  border: 1px solid #e6e6e6;
   max-width: 280px; // Reduced from 360px
   min-width: 200px; // Reduced from 220px
   flex: 0 0 250px; // Reduced from 300px
@@ -420,21 +361,11 @@ html {
   font-size: 1rem;
 }
 
-// 确保所有卡片保持一致的宽度
-.sidebar, .archive, .profile-main-card {
-  width: 100%;
-  box-sizing: border-box;
-}
-
 .archive {
   flex: 1 1 0%;
   min-width: 0;
-  background: #fff;
-  border-radius: 18px;
-  box-shadow: 0 4px 24px rgba(0,0,0,0.08), 0 1.5px 4px rgba(0,0,0,0.04);
   padding: 2rem 2rem 1.5rem 2rem;
   margin: 1.5rem 0 1.5rem auto; // Changed to push to right (auto left margin)
-  border: 1px solid #e6e6e6;
   max-width: 70%; // Changed to percentage
   min-width: 320px;
   align-self: flex-start;
@@ -484,73 +415,22 @@ html {
     padding: 1rem 0.5rem 0.5rem 0.5rem;
     gap: 2rem; // 进一步增加间距，防止重叠
   }
-  .sidebar {
+  .sidebar, .archive {
     max-width: 100%;
     min-width: 0;
+    width: 100%;
+    box-sizing: border-box;
+  }
+  .sidebar {
     margin: 0 0 2rem 0; // 增加底部间距
     padding: 1.5rem 1rem 1rem 1rem;
     min-height: auto;
     order: 1; // 确保侧边栏在上方
-    width: auto; // 移除固定宽度，使用容器宽度
   }
   .archive {
     padding: 1.5rem 1rem 1rem 1rem;
     margin: 0;
-    max-width: 100%;
     order: 2; // 确保主内容在下方
-    width: auto; // 移除固定宽度，使用容器宽度
-  }
-  
-  // 修复社交链接显示问题
-  .author__urls-wrapper {
-    position: relative;
-    display: block;
-    width: 100%;
-    margin-top: 1rem;
-    z-index: 10;
-  }
-  
-  .author__urls {
-    display: flex !important;
-    flex-wrap: wrap;
-    justify-content: center;
-    padding: 0;
-    list-style-type: none;
-    margin: 0.5rem 0;
-  }
-  
-  .author__urls li {
-    margin: 0.25rem;
-  }
-  
-  .author__urls a {
-    display: inline-flex;
-    align-items: center;
-    padding: 0.4rem 0.6rem;
-    color: #333;
-    background: #f8f9fa;
-    border-radius: 5px;
-    text-decoration: none;
-    font-size: 0.85rem;
-  }
-  
-  .author__urls a:hover {
-    background: #e9ecef;
-  }
-  
-  .author__urls i {
-    margin-right: 0.4rem;
-  }
-  
-  // 保持卡片宽度一致
-  .h-card {
-    width: 100%;
-    box-sizing: border-box;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    padding: 0.5rem 0;
   }
   
   // 移动端个人信息卡片样式优化 - 修复重叠问题
@@ -560,6 +440,7 @@ html {
     align-items: center; // 居中对齐
     text-align: center; // 文字居中
     padding: 0.5rem 0; // 减少内边距
+    width: 100%; // 确保占满整个宽度
   }
   
   .author__avatar {
@@ -613,7 +494,7 @@ html {
     padding: 1.5rem 1rem 1rem 1rem;
     margin-bottom: 1.5rem;
     overflow: hidden; // 防止内容溢出
-    width: auto; // 移除固定宽度，使用容器宽度
+    width: 100%;
   }
   
   // 确保文章列表不重叠
@@ -633,7 +514,20 @@ html {
   }
 }
 
-// 强制显示社交链接
+// 移除Follow按钮，直接显示社交链接
+.author__urls-wrapper .btn {
+  display: none !important;
+}
+
+// 社交链接样式
+.author__urls-wrapper {
+  position: relative;
+  display: block;
+  width: 100%;
+  margin-top: 1rem;
+  z-index: 3;
+}
+
 .author__urls {
   display: flex !important;
   flex-wrap: wrap;
@@ -641,4 +535,50 @@ html {
   padding: 0;
   list-style-type: none;
   margin: 0.5rem 0;
+  gap: 0.5rem;
+}
+
+.author__urls li {
+  margin: 0.25rem;
+}
+
+.author__urls a {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.4rem 0.6rem;
+  color: #333;
+  background: #f8f9fa;
+  border-radius: 5px;
+  text-decoration: none;
+  font-size: 0.85rem;
+  transition: background 0.2s ease;
+}
+
+.author__urls a:hover {
+  background: #e9ecef;
+  text-decoration: none;
+}
+
+.author__urls i {
+  margin-right: 0.4rem;
+}
+
+// 确保各屏幕尺寸下社交链接正确显示
+@media (max-width: 480px) {
+  .author__urls {
+    gap: 0.3rem;
+  }
+  
+  .author__urls li {
+    margin: 0.2rem;
+  }
+  
+  .author__urls a {
+    padding: 0.3rem 0.5rem;
+    font-size: 0.75rem;
+  }
+  
+  .author__urls i {
+    margin-right: 0.25rem;
+  }
 }
