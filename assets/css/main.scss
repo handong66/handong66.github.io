@@ -519,12 +519,12 @@ html {
   display: none !important;
 }
 
-// 社交链接样式
+// 社交链接样式 - 移除方框背景
 .author__urls-wrapper {
   position: relative;
   display: block;
   width: 100%;
-  margin-top: 1rem;
+  margin-top: 0.75rem;
   z-index: 3;
 }
 
@@ -534,48 +534,46 @@ html {
   justify-content: center;
   padding: 0;
   list-style-type: none;
-  margin: 0.5rem 0;
-  gap: 0.5rem;
+  margin: 0.75rem 0;
+  gap: 1rem;
 }
 
 .author__urls li {
-  margin: 0.25rem;
+  margin: 0;
 }
 
 .author__urls a {
   display: inline-flex;
   align-items: center;
-  padding: 0.4rem 0.6rem;
-  color: #333;
-  background: #f8f9fa;
-  border-radius: 5px;
+  padding: 0.3rem;
+  color: #555;
+  background: transparent; // 移除背景
+  border-radius: 0; // 移除圆角
   text-decoration: none;
-  font-size: 0.85rem;
-  transition: background 0.2s ease;
+  font-size: 0.9rem;
+  transition: color 0.2s ease;
 }
 
 .author__urls a:hover {
-  background: #e9ecef;
-  text-decoration: none;
+  background: transparent; // 移除悬停背景
+  color: #000; // 悬停时变为黑色
+  text-decoration: underline; // 添加下划线
 }
 
 .author__urls i {
-  margin-right: 0.4rem;
+  margin-right: 0.3rem;
 }
 
 // 确保各屏幕尺寸下社交链接正确显示
 @media (max-width: 480px) {
   .author__urls {
-    gap: 0.3rem;
-  }
-  
-  .author__urls li {
-    margin: 0.2rem;
+    gap: 0.75rem;
+    margin: 0.5rem 0;
   }
   
   .author__urls a {
-    padding: 0.3rem 0.5rem;
-    font-size: 0.75rem;
+    font-size: 0.85rem;
+    padding: 0.2rem;
   }
   
   .author__urls i {
