@@ -118,18 +118,18 @@ html {
     padding: 1.5rem 1rem 1rem 1rem;
     margin-bottom: 1.5rem; // 减少底部间距
   }
-  
+
   // 移动端个人信息卡片优化
   .sidebar .h-card {
     min-height: auto;
     overflow: visible;
     padding: 1.5rem 1rem 1rem 1rem; // 增加内边距
   }
-  
+
   .sidebar .author__urls-wrapper {
     margin-top: 1.5rem; // 增加间距
   }
-  
+
   .sidebar .author__urls {
     max-width: 100%;
   }
@@ -141,121 +141,117 @@ html {
     padding: 0.75rem 0.25rem 0.25rem 0.25rem;
     gap: 1.5rem; // 增加间距
   }
-  
+
   .profile-layout {
     gap: 1.5rem; // 减少间距
     padding: 0.75rem 0.25rem;
   }
-  
+
   .sidebar {
     padding: 1.25rem 0.75rem 0.75rem 0.75rem;
     margin: 0 0 1.5rem 0; // 增加底部间距
   }
-  
+
   .archive {
     padding: 1.25rem 0.75rem 0.75rem 0.75rem;
     margin-top: 0; // 确保没有额外的顶部边距
   }
-  
+
   .h-card {
-    padding: 1rem 0;
+    padding: 0.5rem 0;
     display: flex;
-    flex-direction: row; // 保持水平布局
-    align-items: flex-start; // 顶部对齐
-    text-align: left; // 左对齐
-    gap: 1rem; // 减少间距以适应小屏幕
+    flex-direction: column; // 改为垂直布局，防止重叠
+    align-items: center; // 居中对齐
+    text-align: center; // 文字居中
+    width: 100%;
   }
-  
+
   .author__avatar {
-    margin-bottom: 0;
-    flex-shrink: 0; // 防止头像被压缩
+    margin-bottom: 1.2rem; // 增加头像底部间距，确保与文字分开
+    display: block;
+    width: 110px; // 控制头像容器宽度
+    height: 110px; // 控制头像容器高度
+    position: relative;
+    z-index: 1;
   }
-  
+
   .author__avatar img {
-    width: 100px; // 稍微减小头像尺寸
-    height: 100px;
+    width: 100%;
+    height: 100%;
     border-radius: 50%;
     object-fit: cover;
   }
-  
+
   .author__content {
-    margin-bottom: 0.75rem;
-    flex: 1;
-    min-width: 0;
+    width: 100%; // 确保文字内容占满宽度
+    margin-top: 0.5rem; // 增加顶部间距
+    margin-bottom: 1rem;
+    display: block; // 改为块级元素
+    position: relative;
+    z-index: 2;
   }
-  
+
   .author__name {
-    font-size: 1.3rem; // 调整字体大小
-    margin-bottom: 0.5rem;
-    line-height: 1.3;
+    font-size: 1.25rem; // 调整字体大小
+    margin-bottom: 0.4rem;
+    line-height: 1.2;
+    font-weight: 600;
+    text-align: center;
+    position: relative;
+    z-index: 2;
   }
-  
+
   .author__bio {
     font-size: 0.9rem;
-    line-height: 1.4;
-    margin-bottom: 0.75rem; // 减少底部间距
+    line-height: 1.3;
+    margin-bottom: 0.5rem; // 减少底部间距
+    color: #666;
+    text-align: center;
+    position: relative;
+    z-index: 2;
   }
-  
-<<<<<<< HEAD
-=======
-  // 隐藏Follow按钮
-  .author__urls-wrapper .btn {
-    display: none !important;
-  }
-  
-  .author__urls.is--visible {
-    gap: 0.5rem;
-    margin-top: 0.75rem; // 减少顶部间距
-    justify-content: flex-start;
-  }
-  
-  .author__urls.is--visible a {
-    padding: 0.4rem 0.6rem;
-    font-size: 0.8rem;
-  }
-  
->>>>>>> parent of a1487306 (Update main.scss)
+
   // 修复内容重叠问题
   .profile-main-card {
     padding: 1.25rem 1rem 1rem 1rem;
     margin-bottom: 1.5rem; // 增加底部间距
     overflow: hidden; // 防止内容溢出
   }
-  
+
   // 确保卡片之间有足够间距
   .archive {
     margin-top: 0;
     padding: 1.25rem 1rem 1rem 1rem;
   }
-  
+
   // 确保文章列表不重叠
   .entries-list {
     margin-bottom: 1rem;
   }
-  
+
   .entries-list .entry {
     margin-bottom: 1.5rem;
     padding-bottom: 1rem;
     border-bottom: 1px solid #e6e6e6;
   }
-  
+
   .entries-list .entry:last-child {
     border-bottom: none;
     margin-bottom: 0;
   }
-  
+
   // 确保"What's new?"内容不重叠
   .archive__subtitle {
     margin-bottom: 1.5rem;
     font-size: 1.3rem;
   }
-  
+
   // 确保动态内容有足够间距
   .archive p {
     margin-bottom: 1rem;
     line-height: 1.6;
   }
-  
+
   .archive p:last-child {
     margin-bottom: 0;
   }
@@ -267,92 +263,74 @@ html {
     padding: 0.5rem 0.25rem 0.25rem 0.25rem;
     gap: 1rem;
   }
-  
+
   .profile-layout {
     gap: 1rem;
     padding: 0.5rem 0.25rem;
   }
-  
+
   .sidebar {
     padding: 1rem 0.5rem 0.5rem 0.5rem;
     margin: 0 0 1rem 0;
   }
-  
+
   .archive {
     padding: 1rem 0.5rem 0.5rem 0.5rem;
   }
-  
+
   .h-card {
-    padding: 0.75rem 0;
+    padding: 0.4rem 0;
     gap: 0.75rem; // 进一步减少间距
+    width: 100%;
   }
-  
-  .author__avatar img {
-    width: 80px; // 进一步减小头像尺寸
-    height: 80px;
+
+  .author__avatar {
+    width: 95px; // 进一步减小头像尺寸
+    height: 95px;
+    margin-bottom: 1rem;
   }
-  
+
   .author__content {
-    margin-bottom: 0.5rem;
-  }
-  
-  .author__name {
-    font-size: 1.2rem;
     margin-bottom: 0.4rem;
   }
-  
+
+  .author__name {
+    font-size: 1.15rem;
+    margin-bottom: 0.3rem;
+    line-height: 1.1;
+  }
+
   .author__bio {
     font-size: 0.85rem;
-    line-height: 1.3;
-    margin-bottom: 0.5rem;
+    line-height: 1.2;
+    margin-bottom: 0.4rem;
   }
-  
-<<<<<<< HEAD
-=======
-  // 隐藏Follow按钮
-  .author__urls-wrapper .btn {
-    display: none !important;
-  }
-  
->>>>>>> parent of ed64019e (进一步优化移动端个人信息卡片：改善头像和文字布局显示效果)
+
   .profile-main-card {
     padding: 1rem 0.75rem 0.75rem 0.75rem;
     margin-bottom: 1rem;
   }
-  
+
   .archive {
     padding: 1rem 0.75rem 0.75rem 0.75rem;
   }
-  
+
   // 确保超小屏幕上的内容不重叠
   .archive__subtitle {
     margin-bottom: 1.25rem;
     font-size: 1.2rem;
   }
-  
+
   .archive p {
     margin-bottom: 0.75rem;
     line-height: 1.5;
     font-size: 0.9rem;
   }
-  
+
   .entries-list .entry {
     margin-bottom: 1.25rem;
     padding-bottom: 0.75rem;
   }
-<<<<<<< HEAD
-=======
-  
-  .author__urls.is--visible {
-    gap: 0.4rem;
-    margin-top: 0.5rem;
-  }
-  
-  .author__urls.is--visible a {
-    padding: 0.3rem 0.5rem;
-    font-size: 0.75rem;
-  }
->>>>>>> parent of ed64019e (进一步优化移动端个人信息卡片：改善头像和文字布局显示效果)
 }
 
 // 优化卡片内标题与正文间距
@@ -454,95 +432,63 @@ html {
     margin: 0;
     order: 2; // 确保主内容在下方
   }
-  
-  // 移动端个人信息卡片样式优化 - 与电脑端保持一致
+
+  // 移动端个人信息卡片样式优化 - 修复重叠问题
   .h-card {
     display: flex;
-    flex-direction: row; // 改为水平布局，与电脑端一致
-    align-items: flex-start; // 改为顶部对齐
-    text-align: left; // 改为左对齐
-    padding: 1rem 0;
-    gap: 1.5rem; // 头像和文字之间的间距
+    flex-direction: column; // 改为垂直布局，防止重叠
+    align-items: center; // 居中对齐
+    text-align: center; // 文字居中
+    padding: 0.5rem 0; // 减少内边距
+    width: 100%; // 确保占满整个宽度
   }
-  
+
   .author__avatar {
-    margin-bottom: 0; // 移除底部间距
-    flex-shrink: 0; // 防止头像被压缩
+    margin-bottom: 1.5rem; // 增加头像底部间距，确保与文字分开
+    display: block; // 确保头像容器正确显示
+    width: 130px; // 控制头像容器宽度
+    height: 130px; // 控制头像容器高度
+    position: relative;
+    z-index: 1;
   }
-  
+
   .author__avatar img {
-    width: 120px;
-    height: 120px;
+    width: 100%;
+    height: 100%;
     border-radius: 50%;
     object-fit: cover;
+    display: block; // 确保图片正确显示
   }
-  
+
   .author__content {
-    margin-bottom: 1rem;
-    flex: 1; // 让文字区域占据剩余空间
-    min-width: 0; // 允许文字区域收缩
+    width: 100%; // 确保文字内容占满宽度
+    margin-top: 0; // 增加顶部间距
+    margin-bottom: 0.75rem;
+    display: block; // 改为块级元素
+    position: relative;
+    z-index: 2; // 提高文字层级
   }
-  
+
   .author__name {
-    font-size: 1.5rem;
-    margin-bottom: 0.75rem; // 增加间距
-    line-height: 1.3;
+    font-size: 1.4rem; // 调整字体大小
+    margin-bottom: 0.5rem; // 减少间距
+    line-height: 1.2; // 减少行高
+    font-weight: 600; // 稍微加粗
+    text-align: center;
+    position: relative;
+    z-index: 2; // 提高文字层级
   }
-  
+
   .author__bio {
-    font-size: 1rem;
-    line-height: 1.5;
-    margin-bottom: 1rem; // 减少底部间距
+    font-size: 0.95rem; // 调整字体大小
+    line-height: 1.4; // 调整行高
+    margin-bottom: 0.75rem; // 减少底部间距
+    color: #666; // 稍微淡化颜色
+    text-align: center;
+    position: relative;
+    z-index: 2; // 提高文字层级
   }
-  
-<<<<<<< HEAD
-=======
-  // 隐藏移动端的Follow按钮
-  .author__urls-wrapper .btn {
-    display: none !important;
-  }
-  
-  // 保持原始的社交链接行为，不强制显示
-  .author__urls-wrapper {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start; // 改为左对齐
-  }
-  
-  // 确保社交链接在移动端也能正常显示
-  .author__urls.is--visible {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: flex-start; // 改为左对齐
-    gap: 0.75rem; // 增加间距
-    margin-top: 1rem; // 减少顶部间距
-  }
-  
-  .author__urls.is--visible li {
-    margin: 0.25rem;
-  }
-  
-  .author__urls.is--visible a {
-    display: flex;
-    align-items: center;
-    padding: 0.6rem 0.9rem; // 增加内边距
-    background: #f8f9fa;
-    border-radius: 8px;
-    text-decoration: none;
-    color: #333;
-    font-size: 0.9rem;
-  }
-  
-  .author__urls.is--visible a:hover {
-    background: #e9ecef;
-  }
-  
-  .author__urls.is--visible i {
-    margin-right: 0.5rem;
-  }
-  
->>>>>>> parent of a1487306 (Update main.scss)
+
   // 修复内容重叠问题 - 确保卡片内容不重叠
   .profile-main-card {
     padding: 1.5rem 1rem 1rem 1rem;
@@ -550,18 +496,18 @@ html {
     overflow: hidden; // 防止内容溢出
     width: 100%;
   }
-  
+
   // 确保文章列表不重叠
   .entries-list {
     margin-bottom: 1rem;
   }
-  
+
   .entries-list .entry {
     margin-bottom: 1.5rem;
     padding-bottom: 1rem;
     border-bottom: 1px solid #e6e6e6;
   }
-  
+
   .entries-list .entry:last-child {
     border-bottom: none;
     margin-bottom: 0;
@@ -573,33 +519,31 @@ html {
   display: none !important;
 }
 
-// --- MODIFIED SECTION START ---
-// 社交链接样式 - 强制移除容器背景并优化布局
-
+// 社交链接样式 - 移除方框背景
 .author__urls-wrapper {
   position: relative;
   display: block;
   width: 100%;
-  margin-top: 1rem; // 增加了与上方内容的间距
+  margin-top: 0.75rem;
   z-index: 3;
 }
 
-// 使用高优先级选择器，强制移除容器的所有装饰样式
-.sidebar .author__urls,
-.author__urls.nav__list,
+// --- MODIFIED SECTION START ---
+// 修改此部分以移除社交链接的容器框
 .author__urls {
-  background: none !important;
-  border: none !important;
-  box-shadow: none !important;
-  padding: 0 !important; // 移除内边距，防止背景色泄露
-  margin: 0 auto !important; // 确保列表本身居中
   display: flex !important;
   flex-wrap: wrap;
-  justify-content: center; // 链接内容居中排列
-  align-items: center;
+  justify-content: center;
   list-style-type: none;
-  gap: 0.8rem 1rem; // 调整链接之间的垂直和水平间距
+  margin: 0.75rem 0;
+  gap: 1rem;
+  // 新增规则以移除背景和边框
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+  padding: 0 !important;
 }
+// --- MODIFIED SECTION END ---
 
 .author__urls li {
   margin: 0;
@@ -610,36 +554,36 @@ html {
   align-items: center;
   padding: 0.3rem;
   color: #555;
-  background: transparent !important; // 再次确认链接本身背景透明
-  border: none !important; // 再次确认链接本身无边框
+  background: transparent; // 移除背景
+  border-radius: 0; // 移除圆角
   text-decoration: none;
   font-size: 0.9rem;
   transition: color 0.2s ease;
 }
 
 .author__urls a:hover {
-  background: transparent !important;
-  color: #000;
-  text-decoration: underline;
+  background: transparent; // 移除悬停背景
+  color: #000; // 悬停时变为黑色
+  text-decoration: underline; // 添加下划线
 }
 
 .author__urls i {
-  margin-right: 0.4rem; // 稍微增加图标与文字的间距
+  margin-right: 0.3rem;
 }
 
 // 确保各屏幕尺寸下社交链接正确显示
 @media (max-width: 480px) {
   .author__urls {
-    gap: 0.6rem 0.8rem; // 调整超小屏幕下的间距
+    gap: 0.75rem;
+    margin: 0.5rem 0;
   }
-  
+
   .author__urls a {
     font-size: 0.85rem;
     padding: 0.2rem;
   }
-  
+
   .author__urls i {
-    margin-right: 0.3rem;
+    margin-right: 0.25rem;
   }
 }
-// --- MODIFIED SECTION END ---
