@@ -624,7 +624,7 @@ html {
   /* 社交链接容器 */
   .author__urls-wrapper {
     width: 100%;
-    margin-top: 1.5rem;
+    margin-top: 0.2rem; /* 减少顶部空白 */
     display: flex;
     justify-content: center;
   }
@@ -635,11 +635,11 @@ html {
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
-    width: 90%;
+    width: 100%;
     max-width: 500px;
     margin: 0 auto;
-    padding: 0.5rem 0 !important;
-    gap: 1.2rem;
+    padding: 0 !important;
+    gap: 1rem;
   }
   
   /* 社交链接项 */
@@ -658,6 +658,8 @@ html {
     font-size: 0.9rem;
     color: #444;
     text-decoration: none;
+    padding: 0.3rem 0.5rem;
+    line-height: 1;
   }
   
   /* 社交链接图标和文字间距 */
@@ -684,20 +686,20 @@ html {
 @media (max-width: 480px) {
   /* 调整社交链接间距和大小 */
   .author__urls {
-    gap: 0.8rem;
-    padding: 0.3rem 0 !important;
+    gap: 0.6rem;
+    padding: 0 !important;
     flex-wrap: wrap;
     justify-content: center;
     width: 100%;
   }
   
   .author__urls li {
-    margin-bottom: 0.4rem;
+    margin-bottom: 0.3rem;
   }
   
   .author__urls a {
     font-size: 0.85rem;
-    padding: 0.15rem 0.3rem;
+    padding: 0.2rem 0.3rem;
   }
   
   /* 确保社交链接在一行内显示完整 */
@@ -707,16 +709,103 @@ html {
   }
 }
 
-/* 增加间距确保头像、姓名和社交链接之间有适当间隔 */
-.h-card {
-  padding-bottom: 1rem;
-}
-
-.author__content {
-  margin-bottom: 1.5rem;
-}
-
-/* 确保bio和社交链接之间有适当间距 */
+/* 移除蓝色区域的多余空白 */
 .author__bio {
-  margin-bottom: 1.2rem;
+  margin-bottom: 0.5rem; /* 减少bio下方的空白 */
+}
+
+/* 减少头像和姓名之间的空白 */
+.author__avatar {
+  margin-bottom: 1rem; /* 原来是1.5rem，减少了0.5rem */
+}
+
+/* 减少姓名和bio之间的空白 */
+.author__name {
+  margin-bottom: 0.3rem; /* 减少姓名下方空白 */
+}
+
+/* 减少bio和社交链接之间的空白 */
+.author__content {
+  margin-bottom: 0.5rem; /* 减少了author_content底部空白 */
+}
+
+/* 移除绿色框中的箭头 */
+.fa-arrow-up,
+.fa-chevron-up,
+.fa-angle-up {
+  display: none !important; /* 隐藏所有可能的上箭头图标 */
+}
+
+/* 自定义上箭头样式（如需替换） */
+.scroll-to-top {
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+}
+
+/* 优化社交链接排版 - 特别是红色框区域 */
+@media (max-width: 767px) {
+  /* 社交链接容器整体布局 */
+  .author__urls-wrapper {
+    margin-top: 0.5rem;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+  
+  /* 社交链接列表 - 改为栅格布局实现更好的对齐 */
+  .author__urls {
+    display: grid !important; /* 使用网格布局 */
+    grid-template-columns: auto auto; /* 两列布局 */
+    justify-content: center;
+    gap: 0.8rem 1.5rem; /* 行间距0.8rem，列间距1.5rem */
+    width: auto;
+    margin: 0.5rem auto;
+    padding: 0 !important;
+  }
+  
+  /* 每个社交链接项 */
+  .author__urls li {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start; /* 左对齐内容 */
+  }
+  
+  /* 社交链接样式 */
+  .author__urls a {
+    display: flex;
+    align-items: center;
+    padding: 0.3rem 0;
+    font-size: 0.9rem;
+    width: 100%;
+  }
+  
+  /* 图标和文字对齐 */
+  .author__urls a i,
+  .author__urls a svg {
+    width: 1.2rem; /* 固定图标宽度 */
+    margin-right: 0.5rem;
+    text-align: center;
+    display: inline-flex;
+    justify-content: center;
+  }
+}
+
+/* 超小屏幕进一步优化 */
+@media (max-width: 480px) {
+  .author__urls {
+    grid-template-columns: auto auto; /* 保持两列 */
+    gap: 0.6rem 1.2rem; /* 稍微减少间距 */
+  }
+  
+  .author__urls a {
+    font-size: 0.85rem;
+    padding: 0.2rem 0;
+  }
+  
+  .author__urls a i,
+  .author__urls a svg {
+    width: 1.1rem;
+    margin-right: 0.4rem;
+  }
 }
