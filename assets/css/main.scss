@@ -528,8 +528,7 @@ html {
   z-index: 3;
 }
 
-// --- MODIFIED SECTION START ---
-// 修改此部分以移除社交链接的容器框
+/* 修改社交链接容器样式 */
 .author__urls {
   display: flex !important;
   flex-wrap: wrap;
@@ -537,13 +536,12 @@ html {
   list-style-type: none;
   margin: 0.75rem 0;
   gap: 1rem;
-  // 新增规则以移除背景和边框
+  /* 移除背景和边框 */
   background: transparent !important;
   border: none !important;
   box-shadow: none !important;
   padding: 0 !important;
 }
-// --- MODIFIED SECTION END ---
 
 .author__urls li {
   margin: 0;
@@ -588,7 +586,7 @@ html {
   }
 }
 
-/* 新增 - 头像和姓名居中显示 */
+/* 头像和姓名居中显示 */
 .h-card {
   display: flex;
   flex-direction: column;
@@ -619,4 +617,106 @@ html {
 .author__bio {
   text-align: center;
   width: 100%;
+}
+
+/* 修复手机端社交链接显示问题 */
+@media (max-width: 767px) {
+  /* 社交链接容器 */
+  .author__urls-wrapper {
+    width: 100%;
+    margin-top: 1.5rem;
+    display: flex;
+    justify-content: center;
+  }
+  
+  /* 社交链接列表 */
+  .author__urls {
+    display: flex !important;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    width: 90%;
+    max-width: 500px;
+    margin: 0 auto;
+    padding: 0.5rem 0 !important;
+    gap: 1.2rem;
+  }
+  
+  /* 社交链接项 */
+  .author__urls li {
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  /* 社交链接按钮 */
+  .author__urls a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.9rem;
+    color: #444;
+    text-decoration: none;
+  }
+  
+  /* 社交链接图标和文字间距 */
+  .author__urls a i {
+    margin-right: 0.4rem;
+  }
+  
+  /* 确保社交链接图标对齐 */
+  .author__urls a svg,
+  .author__urls a .fas,
+  .author__urls a .fab,
+  .author__urls a .far {
+    vertical-align: middle;
+    margin-top: -2px;
+  }
+  
+  /* 确保文本垂直居中 */
+  .author__urls a span {
+    vertical-align: middle;
+  }
+}
+
+/* 超小屏幕社交链接优化 */
+@media (max-width: 480px) {
+  /* 调整社交链接间距和大小 */
+  .author__urls {
+    gap: 0.8rem;
+    padding: 0.3rem 0 !important;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 100%;
+  }
+  
+  .author__urls li {
+    margin-bottom: 0.4rem;
+  }
+  
+  .author__urls a {
+    font-size: 0.85rem;
+    padding: 0.15rem 0.3rem;
+  }
+  
+  /* 确保社交链接在一行内显示完整 */
+  .author__urls a i {
+    margin-right: 0.3rem;
+    font-size: 0.9rem;
+  }
+}
+
+/* 增加间距确保头像、姓名和社交链接之间有适当间隔 */
+.h-card {
+  padding-bottom: 1rem;
+}
+
+.author__content {
+  margin-bottom: 1.5rem;
+}
+
+/* 确保bio和社交链接之间有适当间距 */
+.author__bio {
+  margin-bottom: 1.2rem;
 }
