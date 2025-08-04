@@ -160,42 +160,56 @@ html {
   .h-card {
     padding: 1rem 0;
     display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
+    flex-direction: row; // 保持水平布局
+    align-items: flex-start; // 顶部对齐
+    text-align: left; // 左对齐
+    gap: 1rem; // 减少间距以适应小屏幕
   }
   
   .author__avatar {
-    margin-bottom: 1.25rem; // 增加头像下方间距
+    margin-bottom: 0;
+    flex-shrink: 0; // 防止头像被压缩
   }
   
   .author__avatar img {
-    width: 110px; // 稍微减小头像尺寸
-    height: 110px;
+    width: 100px; // 稍微减小头像尺寸
+    height: 100px;
     border-radius: 50%;
     object-fit: cover;
   }
   
-  .author__name {
-    font-size: 1.4rem; // 调整字体大小
+  .author__content {
     margin-bottom: 0.75rem;
+    flex: 1;
+    min-width: 0;
+  }
+  
+  .author__name {
+    font-size: 1.3rem; // 调整字体大小
+    margin-bottom: 0.5rem;
     line-height: 1.3;
   }
   
   .author__bio {
-    font-size: 0.95rem;
-    line-height: 1.5;
-    margin-bottom: 1.25rem; // 增加底部间距
+    font-size: 0.9rem;
+    line-height: 1.4;
+    margin-bottom: 0.75rem; // 减少底部间距
+  }
+  
+  // 隐藏Follow按钮
+  .author__urls-wrapper .btn {
+    display: none !important;
   }
   
   .author__urls.is--visible {
     gap: 0.5rem;
-    margin-top: 1.25rem; // 增加顶部间距
+    margin-top: 0.75rem; // 减少顶部间距
+    justify-content: flex-start;
   }
   
   .author__urls.is--visible a {
-    padding: 0.5rem 0.75rem;
-    font-size: 0.85rem;
+    padding: 0.4rem 0.6rem;
+    font-size: 0.8rem;
   }
   
   // 修复内容重叠问题
@@ -265,17 +279,34 @@ html {
     padding: 1rem 0.5rem 0.5rem 0.5rem;
   }
   
+  .h-card {
+    padding: 0.75rem 0;
+    gap: 0.75rem; // 进一步减少间距
+  }
+  
   .author__avatar img {
-    width: 100px;
-    height: 100px;
+    width: 80px; // 进一步减小头像尺寸
+    height: 80px;
+  }
+  
+  .author__content {
+    margin-bottom: 0.5rem;
   }
   
   .author__name {
-    font-size: 1.3rem;
+    font-size: 1.2rem;
+    margin-bottom: 0.4rem;
   }
   
   .author__bio {
-    font-size: 0.9rem;
+    font-size: 0.85rem;
+    line-height: 1.3;
+    margin-bottom: 0.5rem;
+  }
+  
+  // 隐藏Follow按钮
+  .author__urls-wrapper .btn {
+    display: none !important;
   }
   
   .profile-main-card {
@@ -304,9 +335,14 @@ html {
     padding-bottom: 0.75rem;
   }
   
+  .author__urls.is--visible {
+    gap: 0.4rem;
+    margin-top: 0.5rem;
+  }
+  
   .author__urls.is--visible a {
-    padding: 0.4rem 0.6rem;
-    font-size: 0.8rem;
+    padding: 0.3rem 0.5rem;
+    font-size: 0.75rem;
   }
 }
 
@@ -406,17 +442,19 @@ html {
     order: 2; // 确保主内容在下方
   }
   
-  // 移动端个人信息卡片样式优化
+  // 移动端个人信息卡片样式优化 - 与电脑端保持一致
   .h-card {
     display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    padding: 1.5rem 0;
+    flex-direction: row; // 改为水平布局，与电脑端一致
+    align-items: flex-start; // 改为顶部对齐
+    text-align: left; // 改为左对齐
+    padding: 1rem 0;
+    gap: 1.5rem; // 头像和文字之间的间距
   }
   
   .author__avatar {
-    margin-bottom: 1.5rem; // 增加间距
+    margin-bottom: 0; // 移除底部间距
+    flex-shrink: 0; // 防止头像被压缩
   }
   
   .author__avatar img {
@@ -427,8 +465,9 @@ html {
   }
   
   .author__content {
-    margin-bottom: 1.5rem;
-    width: 100%;
+    margin-bottom: 1rem;
+    flex: 1; // 让文字区域占据剩余空间
+    min-width: 0; // 允许文字区域收缩
   }
   
   .author__name {
@@ -440,7 +479,12 @@ html {
   .author__bio {
     font-size: 1rem;
     line-height: 1.5;
-    margin-bottom: 1.5rem; // 增加间距
+    margin-bottom: 1rem; // 减少底部间距
+  }
+  
+  // 隐藏移动端的Follow按钮
+  .author__urls-wrapper .btn {
+    display: none !important;
   }
   
   // 保持原始的社交链接行为，不强制显示
@@ -448,16 +492,16 @@ html {
     width: 100%;
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: flex-start; // 改为左对齐
   }
   
   // 确保社交链接在移动端也能正常显示
   .author__urls.is--visible {
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
+    justify-content: flex-start; // 改为左对齐
     gap: 0.75rem; // 增加间距
-    margin-top: 1.5rem; // 增加顶部间距
+    margin-top: 1rem; // 减少顶部间距
   }
   
   .author__urls.is--visible li {
