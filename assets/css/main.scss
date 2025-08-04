@@ -154,11 +154,11 @@ html {
     font-size: 0.95rem;
   }
   
-  .author__urls {
+  .author__urls.is--visible {
     gap: 0.25rem;
   }
   
-  .author__urls a {
+  .author__urls.is--visible a {
     padding: 0.4rem 0.6rem;
     font-size: 0.85rem;
   }
@@ -294,6 +294,7 @@ html {
     margin-bottom: 1rem;
   }
   
+  // 保持原始的社交链接行为，不强制显示
   .author__urls-wrapper {
     width: 100%;
     display: flex;
@@ -301,7 +302,8 @@ html {
     align-items: center;
   }
   
-  .author__urls {
+  // 确保社交链接在移动端也能正常显示
+  .author__urls.is--visible {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -309,11 +311,11 @@ html {
     margin-top: 1rem;
   }
   
-  .author__urls li {
+  .author__urls.is--visible li {
     margin: 0.25rem;
   }
   
-  .author__urls a {
+  .author__urls.is--visible a {
     display: flex;
     align-items: center;
     padding: 0.5rem 0.75rem;
@@ -324,11 +326,11 @@ html {
     font-size: 0.9rem;
   }
   
-  .author__urls a:hover {
+  .author__urls.is--visible a:hover {
     background: #e9ecef;
   }
   
-  .author__urls i {
+  .author__urls.is--visible i {
     margin-right: 0.5rem;
   }
 }
