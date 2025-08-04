@@ -158,51 +158,42 @@ html {
   }
   
   .h-card {
-    padding: 0.5rem 0;
+    padding: 1rem 0;
     display: flex;
     flex-direction: row; // 保持水平布局
     align-items: flex-start; // 顶部对齐
     text-align: left; // 左对齐
     gap: 1rem; // 减少间距以适应小屏幕
-    width: 100%;
   }
   
   .author__avatar {
     margin-bottom: 0;
     flex-shrink: 0; // 防止头像被压缩
-    display: flex;
-    align-items: center;
   }
   
   .author__avatar img {
-    width: 95px; // 进一步减小头像尺寸
-    height: 95px;
+    width: 100px; // 稍微减小头像尺寸
+    height: 100px;
     border-radius: 50%;
     object-fit: cover;
-    display: block;
   }
   
   .author__content {
-    margin-bottom: 0.5rem;
+    margin-bottom: 0.75rem;
     flex: 1;
     min-width: 0;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
   }
   
   .author__name {
-    font-size: 1.25rem; // 调整字体大小
-    margin-bottom: 0.4rem;
-    line-height: 1.2;
-    font-weight: 600;
+    font-size: 1.3rem; // 调整字体大小
+    margin-bottom: 0.5rem;
+    line-height: 1.3;
   }
   
   .author__bio {
     font-size: 0.9rem;
-    line-height: 1.3;
-    margin-bottom: 0.5rem; // 减少底部间距
-    color: #666;
+    line-height: 1.4;
+    margin-bottom: 0.75rem; // 减少底部间距
   }
   
 <<<<<<< HEAD
@@ -212,24 +203,15 @@ html {
     display: none !important;
   }
   
-  .author__urls-wrapper {
-    margin-top: 0.4rem;
-  }
-  
   .author__urls.is--visible {
-    gap: 0.4rem;
-    margin-top: 0.4rem; // 减少顶部间距
+    gap: 0.5rem;
+    margin-top: 0.75rem; // 减少顶部间距
     justify-content: flex-start;
   }
   
   .author__urls.is--visible a {
     padding: 0.4rem 0.6rem;
     font-size: 0.8rem;
-    border-radius: 5px;
-  }
-  
-  .author__urls.is--visible i {
-    margin-right: 0.3rem;
   }
   
 >>>>>>> parent of a1487306 (Update main.scss)
@@ -301,9 +283,8 @@ html {
   }
   
   .h-card {
-    padding: 0.4rem 0;
+    padding: 0.75rem 0;
     gap: 0.75rem; // 进一步减少间距
-    width: 100%;
   }
   
   .author__avatar img {
@@ -312,21 +293,28 @@ html {
   }
   
   .author__content {
-    margin-bottom: 0.4rem;
+    margin-bottom: 0.5rem;
   }
   
   .author__name {
-    font-size: 1.15rem;
-    margin-bottom: 0.3rem;
-    line-height: 1.1;
+    font-size: 1.2rem;
+    margin-bottom: 0.4rem;
   }
   
   .author__bio {
     font-size: 0.85rem;
-    line-height: 1.2;
-    margin-bottom: 0.4rem;
+    line-height: 1.3;
+    margin-bottom: 0.5rem;
   }
   
+<<<<<<< HEAD
+=======
+  // 隐藏Follow按钮
+  .author__urls-wrapper .btn {
+    display: none !important;
+  }
+  
+>>>>>>> parent of ed64019e (进一步优化移动端个人信息卡片：改善头像和文字布局显示效果)
   .profile-main-card {
     padding: 1rem 0.75rem 0.75rem 0.75rem;
     margin-bottom: 1rem;
@@ -352,6 +340,19 @@ html {
     margin-bottom: 1.25rem;
     padding-bottom: 0.75rem;
   }
+<<<<<<< HEAD
+=======
+  
+  .author__urls.is--visible {
+    gap: 0.4rem;
+    margin-top: 0.5rem;
+  }
+  
+  .author__urls.is--visible a {
+    padding: 0.3rem 0.5rem;
+    font-size: 0.75rem;
+  }
+>>>>>>> parent of ed64019e (进一步优化移动端个人信息卡片：改善头像和文字布局显示效果)
 }
 
 // 优化卡片内标题与正文间距
@@ -460,47 +461,38 @@ html {
     flex-direction: row; // 改为水平布局，与电脑端一致
     align-items: flex-start; // 改为顶部对齐
     text-align: left; // 改为左对齐
-    padding: 0.5rem 0; // 减少内边距
-    gap: 1.25rem; // 头像和文字之间的间距
-    width: 100%; // 确保占满整个宽度
+    padding: 1rem 0;
+    gap: 1.5rem; // 头像和文字之间的间距
   }
   
   .author__avatar {
     margin-bottom: 0; // 移除底部间距
     flex-shrink: 0; // 防止头像被压缩
-    display: flex; // 确保头像容器正确显示
-    align-items: center; // 垂直居中
   }
   
   .author__avatar img {
-    width: 110px; // 稍微减小头像尺寸
-    height: 110px;
+    width: 120px;
+    height: 120px;
     border-radius: 50%;
     object-fit: cover;
-    display: block; // 确保图片正确显示
   }
   
   .author__content {
-    margin-bottom: 0.75rem;
+    margin-bottom: 1rem;
     flex: 1; // 让文字区域占据剩余空间
     min-width: 0; // 允许文字区域收缩
-    display: flex; // 确保内容容器正确显示
-    flex-direction: column; // 垂直排列
-    justify-content: flex-start; // 顶部对齐
   }
   
   .author__name {
-    font-size: 1.4rem; // 调整字体大小
-    margin-bottom: 0.5rem; // 减少间距
-    line-height: 1.2; // 减少行高
-    font-weight: 600; // 稍微加粗
+    font-size: 1.5rem;
+    margin-bottom: 0.75rem; // 增加间距
+    line-height: 1.3;
   }
   
   .author__bio {
-    font-size: 0.95rem; // 调整字体大小
-    line-height: 1.4; // 调整行高
-    margin-bottom: 0.75rem; // 减少底部间距
-    color: #666; // 稍微淡化颜色
+    font-size: 1rem;
+    line-height: 1.5;
+    margin-bottom: 1rem; // 减少底部间距
   }
   
 <<<<<<< HEAD
@@ -516,7 +508,6 @@ html {
     display: flex;
     flex-direction: column;
     align-items: flex-start; // 改为左对齐
-    margin-top: 0.5rem; // 减少顶部间距
   }
   
   // 确保社交链接在移动端也能正常显示
@@ -524,23 +515,23 @@ html {
     display: flex;
     flex-wrap: wrap;
     justify-content: flex-start; // 改为左对齐
-    gap: 0.5rem; // 减少间距
-    margin-top: 0.5rem; // 减少顶部间距
+    gap: 0.75rem; // 增加间距
+    margin-top: 1rem; // 减少顶部间距
   }
   
   .author__urls.is--visible li {
-    margin: 0.2rem;
+    margin: 0.25rem;
   }
   
   .author__urls.is--visible a {
     display: flex;
     align-items: center;
-    padding: 0.5rem 0.75rem; // 减少内边距
+    padding: 0.6rem 0.9rem; // 增加内边距
     background: #f8f9fa;
-    border-radius: 6px; // 稍微减小圆角
+    border-radius: 8px;
     text-decoration: none;
     color: #333;
-    font-size: 0.85rem; // 稍微减小字体
+    font-size: 0.9rem;
   }
   
   .author__urls.is--visible a:hover {
@@ -548,7 +539,7 @@ html {
   }
   
   .author__urls.is--visible i {
-    margin-right: 0.4rem; // 减少图标间距
+    margin-right: 0.5rem;
   }
   
 >>>>>>> parent of a1487306 (Update main.scss)
