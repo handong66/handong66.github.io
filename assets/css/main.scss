@@ -106,6 +106,7 @@ html {
     max-width: 100%;
     min-width: 0;
     margin-right: 0;
+    min-height: auto; // 确保内容不被截断
   }
   .profile-main {
     margin-left: 0;
@@ -113,6 +114,53 @@ html {
   }
   .profile-main-card {
     padding: 1.2rem 1rem 1rem 1rem;
+  }
+  
+  // 移动端个人信息卡片额外优化
+  .sidebar .h-card {
+    min-height: auto;
+    overflow: visible;
+  }
+  
+  .sidebar .author__urls-wrapper {
+    margin-top: 1rem;
+  }
+  
+  .sidebar .author__urls {
+    max-width: 100%;
+  }
+}
+
+// 更小屏幕的额外优化
+@media (max-width: 600px) {
+  .sidebar {
+    padding: 1rem 0.75rem 0.75rem 0.75rem;
+  }
+  
+  .h-card {
+    padding: 0.75rem 0;
+  }
+  
+  .author__avatar img {
+    width: 100px;
+    height: 100px;
+  }
+  
+  .author__name {
+    font-size: 1.3rem;
+  }
+  
+  .author__bio {
+    font-size: 0.95rem;
+  }
+  
+  .author__urls {
+    gap: 0.25rem;
+  }
+  
+  .author__urls a {
+    padding: 0.4rem 0.6rem;
+    font-size: 0.85rem;
   }
 }
 
@@ -202,10 +250,85 @@ html {
     min-width: 0;
     margin: 0 0 1.2rem 0;
     padding: 1.2rem 1rem 1rem 1rem;
+    min-height: auto; // 确保内容不被截断
   }
   .archive {
     padding: 1.2rem 1rem 1rem 1rem;
     margin: 0;
     max-width: 100%;
+  }
+  
+  // 移动端个人信息卡片样式优化
+  .h-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 1rem 0;
+  }
+  
+  .author__avatar {
+    margin-bottom: 1rem;
+  }
+  
+  .author__avatar img {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+  }
+  
+  .author__content {
+    margin-bottom: 1.5rem;
+    width: 100%;
+  }
+  
+  .author__name {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+  }
+  
+  .author__bio {
+    font-size: 1rem;
+    line-height: 1.4;
+    margin-bottom: 1rem;
+  }
+  
+  .author__urls-wrapper {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .author__urls {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.5rem;
+    margin-top: 1rem;
+  }
+  
+  .author__urls li {
+    margin: 0.25rem;
+  }
+  
+  .author__urls a {
+    display: flex;
+    align-items: center;
+    padding: 0.5rem 0.75rem;
+    background: #f8f9fa;
+    border-radius: 8px;
+    text-decoration: none;
+    color: #333;
+    font-size: 0.9rem;
+  }
+  
+  .author__urls a:hover {
+    background: #e9ecef;
+  }
+  
+  .author__urls i {
+    margin-right: 0.5rem;
   }
 }
