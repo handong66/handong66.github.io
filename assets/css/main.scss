@@ -118,18 +118,18 @@ html {
     padding: 1.5rem 1rem 1rem 1rem;
     margin-bottom: 1.5rem; // 减少底部间距
   }
-  
+
   // 移动端个人信息卡片优化
   .sidebar .h-card {
     min-height: auto;
     overflow: visible;
     padding: 1.5rem 1rem 1rem 1rem; // 增加内边距
   }
-  
+
   .sidebar .author__urls-wrapper {
     margin-top: 1.5rem; // 增加间距
   }
-  
+
   .sidebar .author__urls {
     max-width: 100%;
   }
@@ -141,22 +141,22 @@ html {
     padding: 0.75rem 0.25rem 0.25rem 0.25rem;
     gap: 1.5rem; // 增加间距
   }
-  
+
   .profile-layout {
     gap: 1.5rem; // 减少间距
     padding: 0.75rem 0.25rem;
   }
-  
+
   .sidebar {
     padding: 1.25rem 0.75rem 0.75rem 0.75rem;
     margin: 0 0 1.5rem 0; // 增加底部间距
   }
-  
+
   .archive {
     padding: 1.25rem 0.75rem 0.75rem 0.75rem;
     margin-top: 0; // 确保没有额外的顶部边距
   }
-  
+
   .h-card {
     padding: 0.5rem 0;
     display: flex;
@@ -165,7 +165,7 @@ html {
     text-align: center; // 文字居中
     width: 100%;
   }
-  
+
   .author__avatar {
     margin-bottom: 1.2rem; // 增加头像底部间距，确保与文字分开
     display: block;
@@ -174,14 +174,14 @@ html {
     position: relative;
     z-index: 1;
   }
-  
+
   .author__avatar img {
     width: 100%;
     height: 100%;
     border-radius: 50%;
     object-fit: cover;
   }
-  
+
   .author__content {
     width: 100%; // 确保文字内容占满宽度
     margin-top: 0.5rem; // 增加顶部间距
@@ -190,7 +190,7 @@ html {
     position: relative;
     z-index: 2;
   }
-  
+
   .author__name {
     font-size: 1.25rem; // 调整字体大小
     margin-bottom: 0.4rem;
@@ -200,7 +200,7 @@ html {
     position: relative;
     z-index: 2;
   }
-  
+
   .author__bio {
     font-size: 0.9rem;
     line-height: 1.3;
@@ -210,48 +210,48 @@ html {
     position: relative;
     z-index: 2;
   }
-  
+
   // 修复内容重叠问题
   .profile-main-card {
     padding: 1.25rem 1rem 1rem 1rem;
     margin-bottom: 1.5rem; // 增加底部间距
     overflow: hidden; // 防止内容溢出
   }
-  
+
   // 确保卡片之间有足够间距
   .archive {
     margin-top: 0;
     padding: 1.25rem 1rem 1rem 1rem;
   }
-  
+
   // 确保文章列表不重叠
   .entries-list {
     margin-bottom: 1rem;
   }
-  
+
   .entries-list .entry {
     margin-bottom: 1.5rem;
     padding-bottom: 1rem;
     border-bottom: 1px solid #e6e6e6;
   }
-  
+
   .entries-list .entry:last-child {
     border-bottom: none;
     margin-bottom: 0;
   }
-  
+
   // 确保"What's new?"内容不重叠
   .archive__subtitle {
     margin-bottom: 1.5rem;
     font-size: 1.3rem;
   }
-  
+
   // 确保动态内容有足够间距
   .archive p {
     margin-bottom: 1rem;
     line-height: 1.6;
   }
-  
+
   .archive p:last-child {
     margin-bottom: 0;
   }
@@ -263,70 +263,70 @@ html {
     padding: 0.5rem 0.25rem 0.25rem 0.25rem;
     gap: 1rem;
   }
-  
+
   .profile-layout {
     gap: 1rem;
     padding: 0.5rem 0.25rem;
   }
-  
+
   .sidebar {
     padding: 1rem 0.5rem 0.5rem 0.5rem;
     margin: 0 0 1rem 0;
   }
-  
+
   .archive {
     padding: 1rem 0.5rem 0.5rem 0.5rem;
   }
-  
+
   .h-card {
     padding: 0.4rem 0;
     gap: 0.75rem; // 进一步减少间距
     width: 100%;
   }
-  
+
   .author__avatar {
     width: 95px; // 进一步减小头像尺寸
     height: 95px;
     margin-bottom: 1rem;
   }
-  
+
   .author__content {
     margin-bottom: 0.4rem;
   }
-  
+
   .author__name {
     font-size: 1.15rem;
     margin-bottom: 0.3rem;
     line-height: 1.1;
   }
-  
+
   .author__bio {
     font-size: 0.85rem;
     line-height: 1.2;
     margin-bottom: 0.4rem;
   }
-  
+
   .profile-main-card {
     padding: 1rem 0.75rem 0.75rem 0.75rem;
     margin-bottom: 1rem;
   }
-  
+
   .archive {
     padding: 1rem 0.75rem 0.75rem 0.75rem;
   }
-  
+
   // 确保超小屏幕上的内容不重叠
   .archive__subtitle {
     margin-bottom: 1.25rem;
     font-size: 1.2rem;
   }
-  
+
   .archive p {
     margin-bottom: 0.75rem;
     line-height: 1.5;
     font-size: 0.9rem;
   }
-  
+
   .entries-list .entry {
     margin-bottom: 1.25rem;
     padding-bottom: 0.75rem;
@@ -432,7 +432,7 @@ html {
     margin: 0;
     order: 2; // 确保主内容在下方
   }
-  
+
   // 移动端个人信息卡片样式优化 - 修复重叠问题
   .h-card {
     display: flex;
@@ -442,7 +442,7 @@ html {
     padding: 0.5rem 0; // 减少内边距
     width: 100%; // 确保占满整个宽度
   }
-  
+
   .author__avatar {
     margin-bottom: 1.5rem; // 增加头像底部间距，确保与文字分开
     display: block; // 确保头像容器正确显示
@@ -451,7 +451,7 @@ html {
     position: relative;
     z-index: 1;
   }
-  
+
   .author__avatar img {
     width: 100%;
     height: 100%;
@@ -459,7 +459,7 @@ html {
     object-fit: cover;
     display: block; // 确保图片正确显示
   }
-  
+
   .author__content {
     width: 100%; // 确保文字内容占满宽度
     margin-top: 0; // 增加顶部间距
@@ -468,7 +468,7 @@ html {
     position: relative;
     z-index: 2; // 提高文字层级
   }
-  
+
   .author__name {
     font-size: 1.4rem; // 调整字体大小
     margin-bottom: 0.5rem; // 减少间距
@@ -478,7 +478,7 @@ html {
     position: relative;
     z-index: 2; // 提高文字层级
   }
-  
+
   .author__bio {
     font-size: 0.95rem; // 调整字体大小
     line-height: 1.4; // 调整行高
@@ -488,7 +488,7 @@ html {
     position: relative;
     z-index: 2; // 提高文字层级
   }
-  
+
   // 修复内容重叠问题 - 确保卡片内容不重叠
   .profile-main-card {
     padding: 1.5rem 1rem 1rem 1rem;
@@ -496,18 +496,18 @@ html {
     overflow: hidden; // 防止内容溢出
     width: 100%;
   }
-  
+
   // 确保文章列表不重叠
   .entries-list {
     margin-bottom: 1rem;
   }
-  
+
   .entries-list .entry {
     margin-bottom: 1.5rem;
     padding-bottom: 1rem;
     border-bottom: 1px solid #e6e6e6;
   }
-  
+
   .entries-list .entry:last-child {
     border-bottom: none;
     margin-bottom: 0;
@@ -528,15 +528,22 @@ html {
   z-index: 3;
 }
 
+// --- MODIFIED SECTION START ---
+// 修改此部分以移除社交链接的容器框
 .author__urls {
   display: flex !important;
   flex-wrap: wrap;
   justify-content: center;
-  padding: 0;
   list-style-type: none;
   margin: 0.75rem 0;
   gap: 1rem;
+  // 新增规则以移除背景和边框
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+  padding: 0 !important;
 }
+// --- MODIFIED SECTION END ---
 
 .author__urls li {
   margin: 0;
@@ -570,12 +577,12 @@ html {
     gap: 0.75rem;
     margin: 0.5rem 0;
   }
-  
+
   .author__urls a {
     font-size: 0.85rem;
     padding: 0.2rem;
   }
-  
+
   .author__urls i {
     margin-right: 0.25rem;
   }
