@@ -598,7 +598,7 @@ html {
 .author__avatar {
   display: flex;
   justify-content: center;
-  margin: 0 auto 1.5rem auto;
+  margin: 0 auto 1rem auto; /* 减少底部间距 */
 }
 
 .author__content {
@@ -606,206 +606,285 @@ html {
   flex-direction: column;
   align-items: center;
   width: 100%;
+  margin-bottom: 0.5rem; /* 减少底部间距 */
 }
 
 .author__name {
   text-align: center;
   width: 100%;
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.3rem; /* 减少底部间距 */
 }
 
 .author__bio {
   text-align: center;
   width: 100%;
+  margin-bottom: 0.5rem; /* 减少底部间距 */
 }
 
-/* 修复手机端社交链接显示问题 */
+/* 修复社交链接显示问题 - 完全重写 */
 @media (max-width: 767px) {
-  /* 社交链接容器 */
+  /* 修复社交链接容器 */
   .author__urls-wrapper {
     width: 100%;
-    margin-top: 0.2rem; /* 减少顶部空白 */
-    display: flex;
-    justify-content: center;
+    margin-top: 0.5rem;
+    padding: 0;
+    position: static;
   }
   
-  /* 社交链接列表 */
+  /* 社交链接列表容器 */
   .author__urls {
-    display: flex !important;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
     width: 100%;
-    max-width: 500px;
-    margin: 0 auto;
-    padding: 0 !important;
-    gap: 1rem;
+    display: flex !important;
+    flex-direction: row !important; /* 强制水平排列 */
+    flex-wrap: wrap !important;
+    justify-content: center !important;
+    margin: 0 auto !important;
+    padding: 0.5rem 0 !important;
+    gap: 0.8rem !important;
+    max-width: none !important;
+    position: static !important;
+    background: none !important;
+    border: none !important;
+    box-shadow: none !important;
   }
   
   /* 社交链接项 */
   .author__urls li {
-    margin: 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    display: inline-block !important;
+    margin: 0 !important;
+    position: static !important;
   }
   
-  /* 社交链接按钮 */
+  /* 社交链接 */
   .author__urls a {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 0.9rem;
-    color: #444;
-    text-decoration: none;
-    padding: 0.3rem 0.5rem;
-    line-height: 1;
+    display: inline-flex !important;
+    align-items: center !important;
+    padding: 0.25rem 0.5rem !important;
+    font-size: 0.9rem !important;
+    line-height: 1.2 !important;
+    text-decoration: none !important;
+    color: #444 !important;
+    background: transparent !important;
+    position: static !important;
+    border: none !important;
   }
   
-  /* 社交链接图标和文字间距 */
-  .author__urls a i {
-    margin-right: 0.4rem;
-  }
-  
-  /* 确保社交链接图标对齐 */
-  .author__urls a svg,
+  /* 图标和文本间距 */
+  .author__urls a i,
+  .author__urls a .fa,
   .author__urls a .fas,
-  .author__urls a .fab,
-  .author__urls a .far {
-    vertical-align: middle;
-    margin-top: -2px;
+  .author__urls a .far,
+  .author__urls a .fab {
+    margin-right: 0.4rem !important;
+    min-width: 1rem !important;
+    text-align: center !important;
   }
-  
-  /* 确保文本垂直居中 */
-  .author__urls a span {
-    vertical-align: middle;
+
+  /* 移除任何可能的绝对定位 */
+  .author__urls,
+  .author__urls li,
+  .author__urls a {
+    position: static !important;
+    transform: none !important;
+    top: auto !important;
+    left: auto !important;
+    right: auto !important;
+    bottom: auto !important;
   }
 }
 
-/* 超小屏幕社交链接优化 */
+/* 超小屏幕特别优化 */
 @media (max-width: 480px) {
-  /* 调整社交链接间距和大小 */
-  .author__urls {
-    gap: 0.6rem;
-    padding: 0 !important;
-    flex-wrap: wrap;
-    justify-content: center;
+  /* 创建一个容器使所有社交链接在一行 */
+  .social-links-container {
     width: 100%;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding: 0.5rem 0;
+  }
+  
+  /* 社交链接简化 */
+  .author__urls {
+    flex-direction: row !important;
+    justify-content: center !important;
+    gap: 0.6rem !important;
+    padding: 0 !important;
+    margin: 0 !important;
   }
   
   .author__urls li {
-    margin-bottom: 0.3rem;
+    margin: 0 0.3rem !important;
   }
   
   .author__urls a {
-    font-size: 0.85rem;
-    padding: 0.2rem 0.3rem;
+    padding: 0.2rem 0.4rem !important;
+    font-size: 0.85rem !important;
   }
   
-  /* 确保社交链接在一行内显示完整 */
-  .author__urls a i {
-    margin-right: 0.3rem;
-    font-size: 0.9rem;
+  .author__urls a i,
+  .author__urls a .fa,
+  .author__urls a .fas,
+  .author__urls a .far,
+  .author__urls a .fab {
+    margin-right: 0.3rem !important;
+    min-width: 0.8rem !important;
   }
-}
-
-/* 移除蓝色区域的多余空白 */
-.author__bio {
-  margin-bottom: 0.5rem; /* 减少bio下方的空白 */
-}
-
-/* 减少头像和姓名之间的空白 */
-.author__avatar {
-  margin-bottom: 1rem; /* 原来是1.5rem，减少了0.5rem */
-}
-
-/* 减少姓名和bio之间的空白 */
-.author__name {
-  margin-bottom: 0.3rem; /* 减少姓名下方空白 */
-}
-
-/* 减少bio和社交链接之间的空白 */
-.author__content {
-  margin-bottom: 0.5rem; /* 减少了author_content底部空白 */
 }
 
 /* 移除绿色框中的箭头 */
 .fa-arrow-up,
 .fa-chevron-up,
 .fa-angle-up {
-  display: none !important; /* 隐藏所有可能的上箭头图标 */
+  display: none !important;
 }
 
-/* 自定义上箭头样式（如需替换） */
 .scroll-to-top {
   background: transparent !important;
   border: none !important;
   box-shadow: none !important;
 }
 
-/* 优化社交链接排版 - 特别是红色框区域 */
+/* 强制修复社交链接 - 紧急解决方案 */
 @media (max-width: 767px) {
-  /* 社交链接容器整体布局 */
-  .author__urls-wrapper {
-    margin-top: 0.5rem;
+  /* 创建两行布局，每行两个链接 */
+  .social-links-row {
     width: 100%;
     display: flex;
     justify-content: center;
+    margin: 0.2rem 0;
   }
   
-  /* 社交链接列表 - 改为栅格布局实现更好的对齐 */
-  .author__urls {
-    display: grid !important; /* 使用网格布局 */
-    grid-template-columns: auto auto; /* 两列布局 */
-    justify-content: center;
-    gap: 0.8rem 1.5rem; /* 行间距0.8rem，列间距1.5rem */
-    width: auto;
-    margin: 0.5rem auto;
-    padding: 0 !important;
-  }
-  
-  /* 每个社交链接项 */
-  .author__urls li {
-    display: flex;
-    align-items: center;
-    justify-content: flex-start; /* 左对齐内容 */
-  }
-  
-  /* 社交链接样式 */
-  .author__urls a {
-    display: flex;
-    align-items: center;
-    padding: 0.3rem 0;
-    font-size: 0.9rem;
-    width: 100%;
-  }
-  
-  /* 图标和文字对齐 */
-  .author__urls a i,
-  .author__urls a svg {
-    width: 1.2rem; /* 固定图标宽度 */
-    margin-right: 0.5rem;
-    text-align: center;
+  /* 社交链接项目样式 */
+  .social-link-item {
     display: inline-flex;
-    justify-content: center;
+    align-items: center;
+    padding: 0.3rem 0.5rem;
+    margin: 0 0.5rem;
+  }
+  
+  /* 社交链接图标 */
+  .social-link-icon {
+    margin-right: 0.4rem;
+    min-width: 1rem;
+    text-align: center;
+  }
+  
+  /* 隐藏原有的社交链接 */
+  .author__urls-wrapper {
+    display: none !important;
+  }
+  
+  /* 在移动端直接使用内联HTML替代社交链接 */
+  .mobile-social-links {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0.5rem 0;
   }
 }
 
-/* 超小屏幕进一步优化 */
-@media (max-width: 480px) {
+/* 强制修复 - 完全重构社交链接布局 */
+.author__urls-wrapper {
+  margin-top: 0.5rem;
+  width: 100%;
+}
+
+/* 完全重设社交链接的排列 */
+@media (max-width: 767px) {
+  /* 社交链接总容器 */
+  .social-links-container {
+    width: 100%;
+    display: block;
+    margin: 0.5rem auto;
+    text-align: center;
+  }
+  
+  /* 两行布局容器 */
+  .social-links-row {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0.4rem 0;
+  }
+  
+  /* 单个社交链接项 */
+  .social-link-item {
+    display: inline-flex;
+    align-items: center;
+    padding: 0.3rem 0.6rem;
+    margin: 0 0.3rem;
+    color: #444;
+    text-decoration: none;
+  }
+  
+  /* 社交链接图标 */
+  .social-link-icon {
+    display: inline-block;
+    margin-right: 0.4rem;
+    min-width: 1rem;
+    text-align: center;
+  }
+  
+  /* 社交链接文本 */
+  .social-link-text {
+    display: inline-block;
+  }
+}
+
+/* 强制覆盖社交链接，简化布局 */
+@media (max-width: 767px) {
+  .author__urls-wrapper {
+    margin-top: 0.5rem;
+    padding: 0;
+    position: static;
+    width: 100%;
+  }
+  
   .author__urls {
-    grid-template-columns: auto auto; /* 保持两列 */
-    gap: 0.6rem 1.2rem; /* 稍微减少间距 */
+    display: flex !important;
+    flex-direction: row !important;
+    flex-wrap: wrap !important;
+    justify-content: center !important;
+    align-items: center !important;
+    width: 100% !important;
+    margin: 0 auto !important;
+    padding: 0 !important;
+    position: static !important;
+    list-style: none !important;
+    gap: 0.8rem !important;
+  }
+  
+  .author__urls li {
+    display: inline-block !important;
+    margin: 0.2rem !important;
+    float: none !important;
+    position: static !important;
   }
   
   .author__urls a {
-    font-size: 0.85rem;
-    padding: 0.2rem 0;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    padding: 0.25rem 0.4rem !important;
+    font-size: 0.9rem !important;
+    line-height: 1.2 !important;
+    text-decoration: none !important;
+    color: #444 !important;
+    background: transparent !important;
+    border: none !important;
+    white-space: nowrap !important;
   }
   
   .author__urls a i,
-  .author__urls a svg {
-    width: 1.1rem;
-    margin-right: 0.4rem;
+  .author__urls a .fa,
+  .author__urls a .fas,
+  .author__urls a .far,
+  .author__urls a .fab {
+    margin-right: 0.3rem !important;
+    min-width: 1rem !important;
+    text-align: center !important;
   }
 }
