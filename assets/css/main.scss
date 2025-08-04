@@ -587,3 +587,36 @@ html {
     margin-right: 0.25rem;
   }
 }
+
+/* 新增 - 头像和姓名居中显示 */
+.h-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  width: 100%;
+}
+
+.author__avatar {
+  display: flex;
+  justify-content: center;
+  margin: 0 auto 1.5rem auto;
+}
+
+.author__content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+.author__name {
+  text-align: center;
+  width: 100%;
+  margin-bottom: 0.5rem;
+}
+
+.author__bio {
+  text-align: center;
+  width: 100%;
+}
