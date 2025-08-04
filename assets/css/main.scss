@@ -99,31 +99,35 @@ html {
 @media (max-width: 900px) {
   .profile-layout {
     flex-direction: column;
-    gap: 1.5rem;
-    padding: 1.2rem 0.5rem;
+    gap: 2rem; // 增加间距，防止重叠
+    padding: 1rem 0.5rem;
   }
   .profile-sidebar {
     max-width: 100%;
     min-width: 0;
     margin-right: 0;
-    min-height: auto; // 确保内容不被截断
+    min-height: auto;
+    order: 1; // 确保侧边栏在上方
   }
   .profile-main {
     margin-left: 0;
     width: 100%;
+    order: 2; // 确保主内容在下方
   }
   .profile-main-card {
-    padding: 1.2rem 1rem 1rem 1rem;
+    padding: 1.5rem 1rem 1rem 1rem;
+    margin-bottom: 1.5rem; // 减少底部间距
   }
   
-  // 移动端个人信息卡片额外优化
+  // 移动端个人信息卡片优化
   .sidebar .h-card {
     min-height: auto;
     overflow: visible;
+    padding: 1.5rem 1rem 1rem 1rem; // 增加内边距
   }
   
   .sidebar .author__urls-wrapper {
-    margin-top: 1rem;
+    margin-top: 1.5rem; // 增加间距
   }
   
   .sidebar .author__urls {
@@ -133,12 +137,88 @@ html {
 
 // 更小屏幕的额外优化
 @media (max-width: 600px) {
+  #main {
+    padding: 0.75rem 0.25rem 0.25rem 0.25rem;
+    gap: 1rem;
+  }
+  
+  .profile-layout {
+    gap: 1.5rem; // 减少间距
+    padding: 0.75rem 0.25rem;
+  }
+  
   .sidebar {
-    padding: 1rem 0.75rem 0.75rem 0.75rem;
+    padding: 1.25rem 0.75rem 0.75rem 0.75rem;
+    margin: 0 0 1rem 0;
+  }
+  
+  .archive {
+    padding: 1.25rem 0.75rem 0.75rem 0.75rem;
   }
   
   .h-card {
-    padding: 0.75rem 0;
+    padding: 1rem 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  
+  .author__avatar {
+    margin-bottom: 1.25rem; // 增加头像下方间距
+  }
+  
+  .author__avatar img {
+    width: 110px; // 稍微减小头像尺寸
+    height: 110px;
+    border-radius: 50%;
+    object-fit: cover;
+  }
+  
+  .author__name {
+    font-size: 1.4rem; // 调整字体大小
+    margin-bottom: 0.75rem;
+    line-height: 1.3;
+  }
+  
+  .author__bio {
+    font-size: 0.95rem;
+    line-height: 1.5;
+    margin-bottom: 1.25rem; // 增加底部间距
+  }
+  
+  .author__urls.is--visible {
+    gap: 0.5rem;
+    margin-top: 1.25rem; // 增加顶部间距
+  }
+  
+  .author__urls.is--visible a {
+    padding: 0.5rem 0.75rem;
+    font-size: 0.85rem;
+  }
+  
+  // 修复内容重叠问题
+  .profile-main-card {
+    padding: 1.25rem 1rem 1rem 1rem;
+    margin-bottom: 1rem;
+  }
+  
+  // 确保卡片之间有足够间距
+  .archive {
+    margin-top: 1rem;
+    padding: 1.25rem 1rem 1rem 1rem;
+  }
+}
+
+// 超小屏幕优化
+@media (max-width: 480px) {
+  .profile-layout {
+    gap: 1rem;
+    padding: 0.5rem 0.25rem;
+  }
+  
+  .sidebar {
+    padding: 1rem 0.75rem 0.75rem 0.75rem;
   }
   
   .author__avatar img {
@@ -151,16 +231,15 @@ html {
   }
   
   .author__bio {
-    font-size: 0.95rem;
+    font-size: 0.9rem;
   }
   
-  .author__urls.is--visible {
-    gap: 0.25rem;
+  .profile-main-card {
+    padding: 1rem 0.75rem 0.75rem 0.75rem;
   }
   
-  .author__urls.is--visible a {
-    padding: 0.4rem 0.6rem;
-    font-size: 0.85rem;
+  .archive {
+    padding: 1rem 0.75rem 0.75rem 0.75rem;
   }
 }
 
@@ -242,20 +321,22 @@ html {
 @media (max-width: 900px) {
   #main {
     flex-direction: column;
-    padding: 1.2rem 0.5rem 0.5rem 0.5rem;
-    gap: 0;
+    padding: 1rem 0.5rem 0.5rem 0.5rem;
+    gap: 1.5rem; // 增加间距，防止重叠
   }
   .sidebar {
     max-width: 100%;
     min-width: 0;
-    margin: 0 0 1.2rem 0;
-    padding: 1.2rem 1rem 1rem 1rem;
-    min-height: auto; // 确保内容不被截断
+    margin: 0 0 1.5rem 0; // 增加底部间距
+    padding: 1.5rem 1rem 1rem 1rem;
+    min-height: auto;
+    order: 1; // 确保侧边栏在上方
   }
   .archive {
-    padding: 1.2rem 1rem 1rem 1rem;
+    padding: 1.5rem 1rem 1rem 1rem;
     margin: 0;
     max-width: 100%;
+    order: 2; // 确保主内容在下方
   }
   
   // 移动端个人信息卡片样式优化
@@ -264,11 +345,11 @@ html {
     flex-direction: column;
     align-items: center;
     text-align: center;
-    padding: 1rem 0;
+    padding: 1.5rem 0;
   }
   
   .author__avatar {
-    margin-bottom: 1rem;
+    margin-bottom: 1.5rem; // 增加间距
   }
   
   .author__avatar img {
@@ -285,13 +366,14 @@ html {
   
   .author__name {
     font-size: 1.5rem;
-    margin-bottom: 0.5rem;
+    margin-bottom: 0.75rem; // 增加间距
+    line-height: 1.3;
   }
   
   .author__bio {
     font-size: 1rem;
-    line-height: 1.4;
-    margin-bottom: 1rem;
+    line-height: 1.5;
+    margin-bottom: 1.5rem; // 增加间距
   }
   
   // 保持原始的社交链接行为，不强制显示
@@ -307,8 +389,8 @@ html {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 0.5rem;
-    margin-top: 1rem;
+    gap: 0.75rem; // 增加间距
+    margin-top: 1.5rem; // 增加顶部间距
   }
   
   .author__urls.is--visible li {
@@ -318,7 +400,7 @@ html {
   .author__urls.is--visible a {
     display: flex;
     align-items: center;
-    padding: 0.5rem 0.75rem;
+    padding: 0.6rem 0.9rem; // 增加内边距
     background: #f8f9fa;
     border-radius: 8px;
     text-decoration: none;
@@ -332,5 +414,42 @@ html {
   
   .author__urls.is--visible i {
     margin-right: 0.5rem;
+  }
+}
+
+
+
+// 超小屏幕优化
+@media (max-width: 480px) {
+  #main {
+    padding: 0.5rem 0.25rem 0.25rem 0.25rem;
+    gap: 0.75rem;
+  }
+  
+  .sidebar {
+    padding: 1rem 0.5rem 0.5rem 0.5rem;
+    margin: 0 0 0.75rem 0;
+  }
+  
+  .archive {
+    padding: 1rem 0.5rem 0.5rem 0.5rem;
+  }
+  
+  .author__avatar img {
+    width: 100px;
+    height: 100px;
+  }
+  
+  .author__name {
+    font-size: 1.3rem;
+  }
+  
+  .author__bio {
+    font-size: 0.9rem;
+  }
+  
+  .author__urls.is--visible a {
+    padding: 0.4rem 0.6rem;
+    font-size: 0.8rem;
   }
 }
