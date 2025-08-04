@@ -6,4 +6,206 @@ search: false
 @charset "utf-8";
 
 @import "minimal-mistakes/skins/{{ site.minimal_mistakes_skin | default: 'default' }}"; // skin
-@import "minimal-mistakes"; // main partials
+
+/* system typefaces */
+$serif: Lora, Georgia, Times, serif !default;
+$sans-serif: -apple-system, BlinkMacSystemFont, "Roboto", "Segoe UI", "Helvetica Neue", "Lucida Grande", Arial, sans-serif !default;
+$monospace: Monaco, Consolas, "Lucida Console", monospace !default;
+
+/* sans serif typefaces */
+$sans-serif-narrow: $sans-serif !default;
+$helvetica: Helvetica, "Helvetica Neue", Arial, sans-serif !default;
+
+/* serif typefaces */
+$georgia: Georgia, serif !default;
+$times: Times, serif !default;
+$bodoni: "Bodoni MT", serif !default;
+$calisto: "Calisto MT", serif !default;
+$garamond: Garamond, serif !default;
+
+$global-font-family: $serif !default;
+$header-font-family: $sans-serif !default;
+$caption-font-family: $serif !default;
+
+/* type scale */
+$type-size-1: 2.441em !default;
+$type-size-2: 1.953em !default;
+$type-size-3: 1.563em !default;
+$type-size-4: 1.25em !default;
+$type-size-5: 1.1em !default;
+$type-size-6: 0.8em !default;
+$type-size-7: 0.8em !default;
+$type-size-8: 0.625em !default;
+
+/* headline scale */
+$h-size-1: 1.563em !default;
+$h-size-2: 1.25em !default;
+$h-size-3: 1.125em !default;
+$h-size-4: 1.0625em !default;
+$h-size-5: 1.03125em !default;
+$h-size-6: 1em !default;
+
+@import "minimal-mistakes";
+
+html {
+  font-size: 12px; // change to whatever
+
+  @include breakpoint($medium) {
+    font-size: 14px; // change to whatever
+  }
+
+  @include breakpoint($large) {
+    font-size: 16px; // change to whatever
+  }
+
+  @include breakpoint($x-large) {
+    font-size: 18px; // change to whatever
+  }
+}
+
+// === Custom two-column profile layout ===
+.profile-layout {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: space-between; // Change to space-between to push content to edges
+  max-width: 1280px; // Increased max-width
+  margin: 0 auto;
+  padding: 2rem 1rem;
+}
+
+.profile-sidebar {
+  flex: 0 0 250px; // Reduced width slightly
+  min-width: 200px;
+  max-width: 280px;
+  margin-right: auto; // Push to the left
+}
+
+.profile-main {
+  flex: 0 1 70%; // Changed to percentage-based width
+  min-width: 0;
+  margin-left: 2rem; // Add explicit margin to separate from sidebar
+}
+
+.profile-main-card {
+  background: #fff;
+  border-radius: 18px;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.08), 0 1.5px 4px rgba(0,0,0,0.04);
+  padding: 2.2rem 2rem 2rem 2rem;
+  margin-bottom: 2rem;
+  border: 1px solid #e6e6e6;
+}
+
+@media (max-width: 900px) {
+  .profile-layout {
+    flex-direction: column;
+    gap: 1.5rem;
+    padding: 1.2rem 0.5rem;
+  }
+  .profile-sidebar {
+    max-width: 100%;
+    min-width: 0;
+    margin-right: 0;
+  }
+  .profile-main {
+    margin-left: 0;
+    width: 100%;
+  }
+  .profile-main-card {
+    padding: 1.2rem 1rem 1rem 1rem;
+  }
+}
+
+// 优化卡片内标题与正文间距
+.profile-main-card h1,
+.profile-main-card h2,
+.profile-main-card h3 {
+  margin-top: 0;
+  margin-bottom: 1.2rem;
+}
+
+// 统一侧边栏卡片样式
+.sidebar {
+  background: #fff;
+  border-radius: 18px;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.08), 0 1.5px 4px rgba(0,0,0,0.04);
+  padding: 2rem 1.5rem 1.5rem 1.5rem;
+  margin: 1.5rem 0 1.5rem 0;
+  border: 1px solid #e6e6e6;
+  max-width: 280px; // Reduced from 360px
+  min-width: 200px; // Reduced from 220px
+  flex: 0 0 250px; // Reduced from 300px
+  align-self: flex-start;
+  font-size: 1rem;
+}
+
+.archive {
+  flex: 1 1 0%;
+  min-width: 0;
+  background: #fff;
+  border-radius: 18px;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.08), 0 1.5px 4px rgba(0,0,0,0.04);
+  padding: 2rem 2rem 1.5rem 2rem;
+  margin: 1.5rem 0 1.5rem auto; // Changed to push to right (auto left margin)
+  border: 1px solid #e6e6e6;
+  max-width: 70%; // Changed to percentage
+  min-width: 320px;
+  align-self: flex-start;
+  font-size: 1.05rem;
+}
+
+.page__title {
+  font-size: 2.1rem;
+  font-weight: 700;
+  margin-top: 0;
+  margin-bottom: 1.2rem;
+  letter-spacing: -0.02em;
+}
+
+#main {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  max-width: 1280px; // Increased max-width
+  margin: 0 auto;
+  padding: 1.5rem 1rem 0.5rem 1rem;
+  gap: 3rem;
+  justify-content: space-between; // Changed to space-between
+}
+
+@media (max-width: 1400px) {
+  #main {
+    max-width: 98vw;
+    gap: 1.5rem;
+  }
+  .archive {
+    max-width: 70%;
+    min-width: 0;
+    padding: 1.5rem 1rem 1rem 1rem;
+  }
+  .sidebar {
+    max-width: 100%;
+    min-width: 0;
+    flex: 0 0 220px;
+    padding: 1.5rem 1rem 1rem 1rem;
+  }
+}
+
+@media (max-width: 900px) {
+  #main {
+    flex-direction: column;
+    padding: 1.2rem 0.5rem 0.5rem 0.5rem;
+    gap: 0;
+  }
+  .sidebar {
+    max-width: 100%;
+    min-width: 0;
+    margin: 0 0 1.2rem 0;
+    padding: 1.2rem 1rem 1rem 1rem;
+  }
+  .archive {
+    padding: 1.2rem 1rem 1rem 1rem;
+    margin: 0;
+    max-width: 100%;
+  }
+}

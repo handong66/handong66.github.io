@@ -1,0 +1,21 @@
+---
+layout: archive
+---
+
+<h3 class="archive__subtitle">What's new?</h3>
+
+{% if paginator %}
+  {% assign posts = paginator.posts %}
+{% else %}
+  {% assign posts = site.posts %}
+{% endif %}
+
+{% assign entries_layout = page.entries_layout | default: 'list' %}
+<div class="entries-{{ entries_layout }}">
+  {% include documents-collection.html entries=posts type=entries_layout %}
+</div>
+
+{% include paginator.html %}
+
+{% assign home_content = site.pages | where: "title", "Home Content" | first %}
+{{ home_content.content | markdownify }} 
