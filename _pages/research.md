@@ -6,7 +6,7 @@ layout: profile
 
 **Journal Article**
 
-1. **Han, D.** & Yang, Y. (accepted). Exploring the Contributions of Various Acoustic Features in Cantonese Vocal Emotions*. Journal of Speech, Language, and Hearing Research*   
+1. **Han, D.** & Yang, Y. (2025). Exploring the Contributions of Various Acoustic Features in Cantonese Vocal Emotions. *Journal of Speech, Language, and Hearing Research*, *1*(12). https://doi.org/10.1044/2025_JSLHR-24-00677
 2. Yang, Y., Hou, J., Zou, Y., & **Han, D.** (2025). Acoustic Analysis and Perceptual Evaluation of Second Language Cantonese Tones Produced by Advanced Mandarin-Speaking Learners. *Applied Sciences*, *15*(12), 6590. https://doi.org/10.3390/app15126590  
 3. Zou, Y., Yang, Y., & **Han, D.** (2024). The effects of language dominance on the L1 and L2 tone production of Mandarin-Cantonese bilinguals. *JASA express letters*, *4*(12), 125201. https://doi.org/10.1121/10.0034497
 
